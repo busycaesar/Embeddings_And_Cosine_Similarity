@@ -64,6 +64,7 @@
 
 - As soon as you deploy a cluster, a modal will be displayed on the screen with the title `Connect to <cluster name>`.
 - Set the username and password and store it anywhere safely.
+- Click on `Create Database User` to create a user for database.
 - Then, click `Choose a connection method` button.
 
 ![image](https://github.com/user-attachments/assets/fe4ed023-cef3-49a4-859c-f8063d5ae2c2)
