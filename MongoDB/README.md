@@ -1,6 +1,8 @@
 # Embeddings and Cosine Similarity with MongoDB
 
-1. [Create a MongoDB Atlas account and get connection string](#mongodb-account).
+## Index
+
+1. [MongoDB Account](#mongodb-account).
 2. [Code](#code)
 
 ## MongoDB Account
