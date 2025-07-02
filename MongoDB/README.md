@@ -1,8 +1,12 @@
 # Embeddings and Cosine Similarity with MongoDB
 
+## Prerequisite
+- Python
+- Gemini API Keys
+
 ## Index
 
-1. [MongoDB Account](#mongodb-account).
+1. [MongoDB Account](#mongodb-account) (Skip this step if you already have MongoDB connection string.)
 2. [Code](#code)
 
 ## MongoDB Account
@@ -105,10 +109,11 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-- Create `.env` file and store `MONGODB_CONNECTION_STRING` as following.
+- Create `.env` file and store the following variables along with their values.
 
 ```env
-MONGODB_CONNECTION_STRING='mongodb+srv://...........' 
+MONGODB_CONNECTION_STRING='mongodb+srv://...........'
+GEMINI_API_KEYS='.....'
 ```
 
 - Use the following command to install the required libs and deps.
@@ -118,3 +123,9 @@ pip install --upgrade sentence-transformers langchain_community langchain langch
 ```
 
 - Create a `main.py` file and add [this code](./main.py).
+
+- Finally run the script using the following command.
+
+```bash
+python main.py
+```
