@@ -27,12 +27,6 @@ llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=gemini_api
 
 # Helper functions.
 
-# Function to convert string into embeddings.
-def convert_text_to_embeddings(data, model):
-    # Initiate the embedding model.
-    embedding = model.encode(data)
-    return embedding.tolist()
-
 # Load the PDF
 def get_data_from_pdf(pdf_url):
   loader = PyPDFLoader(pdf_url)
@@ -41,6 +35,13 @@ def get_data_from_pdf(pdf_url):
 def split_text_into_chunks(data, chunk_size=400, chunk_overlap=20):
   text_splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
   return text_splitter.split_documents(data)
+
+# Function to convert string into embeddings.
+def convert_text_to_embeddings(data, model):
+    # Initiate the embedding model.
+    embedding = model.encode(data)
+    return embedding.tolist()
+
 
 def get_mongodb_collection(mongodb_connection_string, db_name, collection_name):
     client = MongoClient(mongodb_connection_string)
