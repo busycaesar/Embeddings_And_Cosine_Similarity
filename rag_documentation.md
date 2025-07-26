@@ -120,7 +120,7 @@ GEMINI_API_KEYS='.....'
 - Use the following command to install the required libs and deps.
 
 ```bash
-pip install --upgrade sentence-transformers langchain_community langchain langchain_google_genai pymongo python-dotenv
+pip install -r req.txt
 ```
 
 - Create a `main.py` file and add [this code](./main.py).
