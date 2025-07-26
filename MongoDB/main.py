@@ -42,7 +42,6 @@ def convert_text_to_embeddings(data, model):
     embedding = model.encode(data)
     return embedding.tolist()
 
-
 def get_mongodb_collection(mongodb_connection_string, db_name, collection_name):
     client = MongoClient(mongodb_connection_string)
     return client[db_name][collection_name]
@@ -140,10 +139,14 @@ def generate_response(prompt, relevant_chunk_of_data, llm):
 # RAG
 
 # Get data from pdf.
+print("Fetch Data: Start")
 data = get_data_from_pdf("https://investors.mongodb.com/node/12236/pdf")
+print("Fetch Data: Complete")
 
 # Split the data into chunks.
+print("Text Chunking: Start")
 documents = split_text_into_chunks(data, 400, 20)
+print("Text Chunking: Done")
 
 # Structure the splited chunks with text and embeddings.
 docs_to_insert = [{
@@ -152,19 +155,27 @@ docs_to_insert = [{
 } for doc in documents]
 
 # Get MongoDB collection.
+print("Get Collection: Start")
 collection = get_mongodb_collection(mongodb_connection_string, "rag_db", "embeddings")   
+print("Get Collection: Done")
 
 # Insert splited chunks into the collection.
+print("Insert Documents: Start")
 collection.insert_many(docs_to_insert)
+print("Insert Documents: Done")
 
 # Create a vector index in the collection.
+print("Create Index: Start")
 create_cosine_search_index(collection, "vector_index")
+print("Create Index: Done")
 
 # Define the query.
 query = "What are MongoDB's latest AI announcements?"
 
 # Get 5 relevant chunks of stored data based on the query.
+print("Get Relevant Data: Start")
 relevant_chunks = get_relevant_chunks(collection, query, 5)
+print("Get Relevant Data: Done")
 
 # Get the generated response by passing the query and relevant chunk of data to Gemini.
 generated_response = generate_response(query, relevant_chunks, llm)
