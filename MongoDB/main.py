@@ -13,7 +13,7 @@ from pymongo.operations import SearchIndexModel
 # Load environment variables from .env file
 load_dotenv()
 
-# Get reuired environment variable.
+# Get required environment variable.
 mongodb_connection_string = os.getenv('MONGODB_CONNECTION_STRING')
 gemini_api_keys = os.getenv('GEMINI_API_KEYS')
 
