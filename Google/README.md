@@ -71,6 +71,6 @@ python main.py
 
 ## Clean the Cloud
 
-1. Go to the [Google Cloud](https://console.cloud.google.com) and search `manage resources` and go to `Manage Resources` page.
+1. Go to the [Google Cloud](https://console.cloud.google.com) and search `manage resources` and go to the `Manage Resources` page.
 
-2. Click the checkbox of the project that you created and click the `Delete` button on the top navigation bar. This will open a modal where you will be prompted to enter a project id and go ahead to click the `Shut down anyway` to delete the project and its resource.
+2. Click the checkbox of the project that you created and click the `Delete` button on the top navigation bar. This will open a modal where you will be prompted to enter a project ID and go ahead to click the `Shut down anyway` to delete the project and its resource.
