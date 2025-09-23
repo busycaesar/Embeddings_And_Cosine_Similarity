@@ -7,46 +7,46 @@
 
 ## BigQuery Dataset
 
-1. https://console.cloud.google.com/projectcreate
+1. Go to [Google Console](https://console.cloud.google.com/projectcreate) to create a new project.
 
-2. Once the project is created search `BigQuery` on the search bar and click on the `BigQuery`
+<img width="1916" height="936" alt="Screenshot From 2025-09-23 07-01-27" src="https://github.com/user-attachments/assets/4a7eff3d-f6d6-4d0d-a337-7ac4993390ba" />
 
-[SS]
+2. Once the project is created, search `BigQuery` in the search bar and click on `BigQuery`.
 
-[SS]
+<img width="1916" height="936" alt="Screenshot From 2025-09-23 07-08-41" src="https://github.com/user-attachments/assets/465fc3a1-86f0-4ce2-a673-512171591682" />
 
-3. Click on the three dots from the explorer column and click `Create dataset`,
+3. Click on the three dots in the explorer column and click `Create dataset`,
 
-[SS]
+<img width="1916" height="936" alt="Screenshot From 2025-09-23 07-10-21" src="https://github.com/user-attachments/assets/99b844b5-f763-43b9-85fd-2aa45c3d9920" />
 
-4. Give a name to the dataset, change the location type of region and select the region closed to your location and then click `Create dataset` button.
+4. Give a name to the dataset, change the location type of region, select the region closest to your location, and then click the  `Create dataset` button.
 
-[SS]
+<img width="1916" height="936" alt="Screenshot From 2025-09-23 07-13-58" src="https://github.com/user-attachments/assets/0eb9f54d-a233-4412-9ada-777ea074cb7b" />
 
-5. Finally, note down the project id, dataset id, and region of the dataset.
+5. Finally, note down the project ID, dataset ID, and region of the dataset. In this case, `main-ember-473011-a4` is the project ID, `vector_database` is the dataset ID, and `us-east1` is the region; similarly, note down the specific data for your case.
 
 ## Code
 
-- Create a python virtual environment using the following command
+- Create a Python virtual environment using the following command
 
 ```bash
 python3 -m venv .venv
 ```
 
-- Active the virtual environment using the following command
+- Activate the virtual environment using the following command
 
 ```bash
 source .venv/bin/activate
 ```
 
-- Create `.env` file and store the following variables along with their values.
+- Create a `.env` file and store the following variables along with their values.
 
 ```env
-PROJECT_ID=
 GEMINI_API_KEYS=
+PROJECT_ID=
 DATASET=
-TABLE=
 REGION=
+TABLE=
 ```
 
 - Use the following command to install the required libs and deps.
@@ -57,7 +57,7 @@ pip install python-dotenv langchain langchain-community langchain-huggingface la
 
 - Create a `main.py` file and add [this code](./main.py).
 
-- Finally run the script using the following command.
+- Finally, run the script using the following command.
 
 ```bash
 python main.py
