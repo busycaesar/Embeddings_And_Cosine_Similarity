@@ -7,10 +7,9 @@
 
 ## Index
 
-## Index
-
 1. [BigQuery Dataset](#bigquery-dataset)
 2. [Code](#code)
+3. [Clean the Cloud](#clean-the-cloud)
 
 ## BigQuery Dataset
 
@@ -26,7 +25,7 @@
 
 <img width="1916" height="936" alt="Screenshot From 2025-09-23 07-10-21" src="https://github.com/user-attachments/assets/99b844b5-f763-43b9-85fd-2aa45c3d9920" />
 
-4. Give a name to the dataset, change the location type of region, select the region closest to your location, and then click the  `Create dataset` button.
+4. Give a name to the dataset, change the location type of region, select the region closest to your location, and then click the `Create dataset` button.
 
 <img width="1916" height="936" alt="Screenshot From 2025-09-23 07-13-58" src="https://github.com/user-attachments/assets/0eb9f54d-a233-4412-9ada-777ea074cb7b" />
 
@@ -69,3 +68,9 @@ pip install python-dotenv langchain langchain-community langchain-huggingface la
 ```bash
 python main.py
 ```
+
+## Clean the Cloud
+
+1. Go to the [Google Cloud](https://console.cloud.google.com) and search `manage resources` and go to `Manage Resources` page.
+
+2. Click the checkbox of the project that you created and click the `Delete` button on the top navigation bar. This will open a modal where you will be prompted to enter a project id and go ahead to click the `Shut down anyway` to delete the project and its resource.
