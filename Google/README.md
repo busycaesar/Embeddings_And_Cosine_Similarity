@@ -5,6 +5,13 @@
 - Python
 - Gemini API Keys
 
+## Index
+
+## Index
+
+1. [BigQuery Dataset](#bigquery-dataset)
+2. [Code](#code)
+
 ## BigQuery Dataset
 
 1. Go to [Google Console](https://console.cloud.google.com/projectcreate) to create a new project.
