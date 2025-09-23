@@ -7,7 +7,23 @@
 
 ## BigQuery Dataset
 
-[Work in progress]
+1. https://console.cloud.google.com/projectcreate
+
+2. Once the project is created search `BigQuery` on the search bar and click on the `BigQuery`
+
+[SS]
+
+[SS]
+
+3. Click on the three dots from the explorer column and click `Create dataset`,
+
+[SS]
+
+4. Give a name to the dataset, change the location type of region and select the region closed to your location and then click `Create dataset` button.
+
+[SS]
+
+5. Finally, note down the project id, dataset id, and region of the dataset.
 
 ## Code
 
