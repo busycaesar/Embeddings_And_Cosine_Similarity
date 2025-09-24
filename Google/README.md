@@ -2,7 +2,7 @@
 
 ## Prerequisite
 
-- Python
+- Python `>= 3.13.7`
 - Gemini API Keys
 
 ## Index
@@ -35,14 +35,44 @@
 
 - Create a Python virtual environment using the following command
 
+Linux/macOS
+
 ```bash
 python3 -m venv .venv
 ```
 
+Windows
+
+```bash
+py -m venv .venv
+```
+
 - Activate the virtual environment using the following command
+
+Linux/macOS
 
 ```bash
 source .venv/bin/activate
+```
+
+Windows
+
+```bash
+.venv\Scripts\activate.bat
+```
+
+- Use the following command to install the required libs and deps.
+
+Linux/macOS
+
+```bash
+pip install python-dotenv langchain langchain-community langchain-huggingface langchain-google-community langchain-google-genai
+```
+
+Windows
+
+```bash
+py -m pip install python-dotenv langchain langchain-community langchain-huggingface langchain-google-community langchain-google-genai
 ```
 
 - Create a `.env` file and store the following variables along with their values.
@@ -55,18 +85,20 @@ REGION=
 TABLE=
 ```
 
-- Use the following command to install the required libs and deps.
-
-```bash
-pip install python-dotenv langchain langchain-community langchain-huggingface langchain-google-community langchain-google-genai
-```
-
 - Create a `main.py` file and add [this code](./main.py).
 
 - Finally, run the script using the following command.
 
+Linux/macOS
+
 ```bash
 python main.py
+```
+
+Windows
+
+```bash
+py main.py
 ```
 
 ## Clean the Cloud
