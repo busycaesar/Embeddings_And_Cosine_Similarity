@@ -9,7 +9,7 @@
 
 1. [BigQuery Dataset](#bigquery-dataset)
 2. [Code](#code)
-3. [Clean the Cloud](#clean-the-cloud)
+3. Do not forget to [Clean the Cloud](#clean-the-cloud)
 
 ## BigQuery Dataset
 
@@ -33,7 +33,7 @@
 
 ## Code
 
-- Create a Python virtual environment using the following command
+1. Create a Python virtual environment using the following command
 
 Linux/macOS
 
@@ -47,7 +47,7 @@ Windows
 py -m venv .venv
 ```
 
-- Activate the virtual environment using the following command
+2. Activate the virtual environment using the following command
 
 Linux/macOS
 
@@ -61,7 +61,7 @@ Windows
 .venv\Scripts\activate.bat
 ```
 
-- Use the following command to install the required libs and deps.
+3. Use the following command to install the required libs and deps.
 
 Linux/macOS
 
@@ -75,7 +75,7 @@ Windows
 py -m pip install python-dotenv langchain langchain-community langchain-huggingface langchain-google-community langchain-google-genai
 ```
 
-- Create a `.env` file and store the following variables along with their values.
+4. Create a `.env` file and store the following variables along with their values.
 
 ```env
 GEMINI_API_KEYS=
@@ -85,9 +85,9 @@ REGION=
 TABLE=
 ```
 
-- Create a `main.py` file and add [this code](./main.py).
+5. Create a `main.py` file and add [this code](./main.py).
 
-- Finally, run the script using the following command.
+6. Finally, run the script using the following command.
 
 Linux/macOS
 
