@@ -2,8 +2,8 @@
 
 ## Prerequisite
 
-- Python `>= 3.13.7`
-- Gemini API Keys
+- [Python](https://www.python.org/downloads) `>= 3.13.7`
+- [Gemini API Keys](https://aistudio.google.com/app/apikey)
 
 ## Index
 
@@ -105,4 +105,4 @@ py main.py
 
 1. Go to the [Google Cloud](https://console.cloud.google.com) and search `manage resources` and go to the `Manage Resources` page.
 
-2. Click the checkbox of the project that you created and click the `Delete` button on the top navigation bar. This will open a modal where you will be prompted to enter a project ID and go ahead to click the `Shut down anyway` to delete the project and its resource.
+2. Click the checkbox of the project that you created, and click the `Delete` button on the top navigation bar. This will open a modal where you will be prompted to enter a project ID and then click the `Shut down anyway` button to delete the project and its resources.
