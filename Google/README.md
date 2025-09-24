@@ -85,7 +85,7 @@ REGION=
 TABLE=
 ```
 
-5. Create a `main.py` file and add [this code](./main.py).
+5. Create a `main.py` file and paste [this code](./main.py).
 
 6. Finally, run the script using the following command.
 
