@@ -54,7 +54,7 @@ ax.plot([0, x_end], [0, y_end], [0, z_end], color='green', linewidth=2)
 x_end, y_end, z_end = 1, 1, 0.7
 
 ## Plot the point
-ax.scatter([x_end], [y_end], [z_end], color='black', s=50, label='User''s Prompt')
+ax.scatter([x_end], [y_end], [z_end], color='black', s=50, label='User''s Question')
 
 ## Plot a line from origin to the point
 ax.plot([0, x_end], [0, y_end], [0, z_end], color='black', linewidth=2)

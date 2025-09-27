@@ -65,7 +65,7 @@ class RAG:
     
 # Required Models.
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=GEMINI_API_KEYS)
+llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", google_api_key=GEMINI_API_KEYS)
 
 bq_vector_store = BigQueryVectorStore(
     project_id=PROJECT_ID,
