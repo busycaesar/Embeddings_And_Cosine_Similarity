@@ -93,6 +93,8 @@ query = "What is the main topic of the document?"
 
 print("Start    get relevant data")
 retrieved_docs = rag_big_query.fetch_relevant_chunk(query)
+print("Relevant Data")
+print(retrieved_docs)
 print("End      get relevant data")
 
 print("Start    generate response")

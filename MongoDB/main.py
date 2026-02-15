@@ -4,8 +4,8 @@ from dotenv import load_dotenv
 import time
 from sentence_transformers import SentenceTransformer
 from langchain_community.document_loaders import PyPDFLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.prompts import PromptTemplate
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_core.prompts import PromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI
 from pymongo import MongoClient
 from pymongo.operations import SearchIndexModel
@@ -17,11 +17,12 @@ load_dotenv()
 mongodb_connection_string = os.getenv('MONGODB_CONNECTION_STRING')
 gemini_api_keys = os.getenv('GEMINI_API_KEYS')
 
-
+if not mongodb_connection_string and not gemini_api_keys:
+  print('MongoDB Connection String and/or Gemini API Keys not provided.')
 
 # Initiate required modals.
 model = SentenceTransformer("nomic-ai/nomic-embed-text-v1", trust_remote_code=True)
-llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=gemini_api_keys)
+llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite", google_api_key=gemini_api_keys)
 
 
 

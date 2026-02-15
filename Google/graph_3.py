@@ -23,7 +23,7 @@ def plot_vector(x, y, z, color, label):
 v1 = plot_vector(1, 0.8, 0.9, 'blue', 'Sentence 1')
 v2 = plot_vector(0.9, 0.9, 1, 'red', 'Sentence 2')
 v3 = plot_vector(0, 0.1, 0.1, 'green', 'Sentence 3')
-vp = plot_vector(1, 1, 0.7, 'black', "User's Prompt")
+vp = plot_vector(1, 1, 0.7, 'black', "User's Question")
 
 # Function to compute angle and plot it
 def plot_angle(vp, vi, label_color, label_text):
@@ -37,7 +37,7 @@ def plot_angle(vp, vi, label_color, label_text):
     mid = (vp + vi) / 4
     ax.text(mid[0], mid[1], mid[2], f'{label_text}: {angle_deg:.1f}°', color=label_color)
 
-    print(f'{label_text} (angle between User\'s Prompt and {label_color.title()} vector): {angle_deg:.2f}°')
+    print(f'{label_text} (angle between User\'s Question and {label_color.title()} vector): {angle_deg:.2f}°')
 
 # Compute angles
 plot_angle(vp, v1, 'blue', 'θ1')
