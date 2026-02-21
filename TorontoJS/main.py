@@ -1,10 +1,10 @@
 import os
 from dotenv import load_dotenv
 from langchain_community.document_loaders import PyPDFLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_google_community import BigQueryVectorStore
-from langchain.prompts import PromptTemplate
+from langchain_core.prompts import PromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 # Load environment variables from .env file
@@ -65,7 +65,7 @@ class RAG:
     
 # Required Models.
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", google_api_key=GEMINI_API_KEYS)
+llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite", google_api_key=GEMINI_API_KEYS)
 
 bq_vector_store = BigQueryVectorStore(
     project_id=PROJECT_ID,
@@ -78,7 +78,7 @@ bq_vector_store = BigQueryVectorStore(
 rag_big_query = RAG(bq_vector_store, llm)
 
 print("Start    Get data from pdf")
-documents = rag_big_query.get_data_from_pdf("chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://services.google.com/fh/files/misc/startup_technical_guide_ai_agents_final.pdf")
+documents = rag_big_query.get_data_from_pdf("https://services.google.com/fh/files/misc/startup_technical_guide_ai_agents_final.pdf")
 print("End      Get data from pdf")
 
 print("Start    Split text into chunks")
