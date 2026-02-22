@@ -66,13 +66,13 @@ Windows
 Linux/macOS
 
 ```bash
-pip install python-dotenv langchain langchain-community langchain-huggingface langchain-google-community langchain-google-genai
+pip install -r req.txt
 ```
 
 Windows
 
 ```bash
-py -m pip install python-dotenv langchain langchain-community langchain-huggingface langchain-google-community langchain-google-genai
+py -m pip -r req.txt
 ```
 
 4. Create a `.env` file and store the following variables along with their values.
