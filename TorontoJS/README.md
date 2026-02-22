@@ -2,7 +2,6 @@
 
 ## Prerequisite
 
-- [Python](https://www.python.org/downloads) `>= 3.13.9`
 - [Gemini API Keys](https://aistudio.google.com/app/apikey)
 
 ## Index
@@ -33,73 +32,21 @@
 
 ## Code
 
-1. Create a Python virtual environment using the following command
+1. Open [this notebook](./main.colab.ipynb) in Colab.
 
-Linux/macOS
+2. Add the following environment variables by clicking on this key button, and grant them notebook access
 
-```bash
-python3 -m venv .venv
+```
+PROJECT_ID
+GEMINI_API_KEYS
+DATASET
+TABLE
+REGION
 ```
 
-Windows
+<img width="400" alt="Screenshot From 2026-02-22 12-53-41" src="https://github.com/user-attachments/assets/7a029558-4149-44d8-b2da-9f377b1931df" />
 
-```bash
-py -m venv .venv
-```
-
-2. Activate the virtual environment using the following command
-
-Linux/macOS
-
-```bash
-source .venv/bin/activate
-```
-
-Windows
-
-```bash
-.venv\Scripts\activate.bat
-```
-
-3. Use the following command to install the required libs and deps.
-
-Linux/macOS
-
-```bash
-pip install -r https://raw.githubusercontent.com/busycaesar/Embeddings_And_Cosine_Similarity/refs/heads/Master/TorontoJS/req.txt
-```
-
-Windows
-
-```bash
-py -m pip -r https://raw.githubusercontent.com/busycaesar/Embeddings_And_Cosine_Similarity/refs/heads/Master/TorontoJS/req.txt
-```
-
-4. Create a `.env` file and store the following variables along with their values.
-
-```env
-GEMINI_API_KEYS=
-PROJECT_ID=
-DATASET=
-REGION=
-TABLE=
-```
-
-5. Create a `main.ipynb` file and paste [this code](./main.ipynb).
-
-6. Finally, run the script using the following command.
-
-Linux/macOS
-
-```bash
-python main.py
-```
-
-Windows
-
-```bash
-py main.py
-```
+3. Finally, you can run the commands in the notebook.
 
 ## Clean the Cloud
 
