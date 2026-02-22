@@ -2,7 +2,7 @@
 
 ## Prerequisite
 
-- [Python](https://www.python.org/downloads) `>= 3.13.7`
+- [Python](https://www.python.org/downloads) `>= 3.13.9`
 - [Gemini API Keys](https://aistudio.google.com/app/apikey)
 
 ## Index
@@ -66,13 +66,13 @@ Windows
 Linux/macOS
 
 ```bash
-pip install -r req.txt
+pip install -r https://raw.githubusercontent.com/busycaesar/Embeddings_And_Cosine_Similarity/refs/heads/Master/TorontoJS/req.txt
 ```
 
 Windows
 
 ```bash
-py -m pip -r req.txt
+py -m pip -r https://raw.githubusercontent.com/busycaesar/Embeddings_And_Cosine_Similarity/refs/heads/Master/TorontoJS/req.txt
 ```
 
 4. Create a `.env` file and store the following variables along with their values.
@@ -85,7 +85,7 @@ REGION=
 TABLE=
 ```
 
-5. Create a `main.py` file and paste [this code](./main.py).
+5. Create a `main.ipynb` file and paste [this code](./main.ipynb).
 
 6. Finally, run the script using the following command.
 
