@@ -1,108 +1,90 @@
-# Embeddings and Cosine Similarity with BigQuery
-
-## Prerequisite
-
-- [Python](https://www.python.org/downloads) `>= 3.13.9`
-- [Gemini API Keys](https://aistudio.google.com/app/apikey)
+# Embeddings and Cosine Similarity with Azure
 
 ## Index
 
-1. [BigQuery Dataset](#bigquery-dataset)
-2. [Code](#code)
-3. Do not forget to [Clean the Cloud](#clean-the-cloud)
+1. [Azure Resources](#azure-resources)
+   - [Azure AI Search](#azure-ai-search)
+   - [Azure AI Foundry](#azure-ai-foundry)
+3. [Code](#code)
+4. Do not forget to [Clean the Cloud](#clean-the-cloud)
 
-## BigQuery Dataset
+## Azure Resources
 
-1. Go to [Google Console](https://console.cloud.google.com/projectcreate) to create a new project.
+### Azure AI Search
 
-<img width="1916" height="936" alt="Screenshot From 2025-09-23 07-01-27" src="https://github.com/user-attachments/assets/4a7eff3d-f6d6-4d0d-a337-7ac4993390ba" />
+In this lab, we are using **Azure AI Search** as a vector database. To use that, we need to provision the resource and get two values: `AZURE_OPEN_API_ENDPOINT` and `AZURE_OPEN_API_KEY`, which will be used as environment variables. 
 
-2. Once the project is created, search `BigQuery` in the search bar and click on `BigQuery`.
+1. Go to the [Azure Portal](portal.azure.com) and open `AI Search`.
 
-<img width="1916" height="936" alt="Screenshot From 2025-09-23 07-08-41" src="https://github.com/user-attachments/assets/465fc3a1-86f0-4ce2-a673-512171591682" />
+<img width="800" alt="Screenshot From 2026-03-07 11-48-30" src="https://github.com/user-attachments/assets/e5e9123f-1e41-4280-a43a-ca9818297f69" />
 
-3. Click on the three dots in the explorer column and click `Create dataset`,
+2. Click `Create` to create a new search service.
 
-<img width="1916" height="936" alt="Screenshot From 2025-09-23 07-10-21" src="https://github.com/user-attachments/assets/99b844b5-f763-43b9-85fd-2aa45c3d9920" />
+<img width="800" alt="Screenshot From 2026-03-07 11-49-39" src="https://github.com/user-attachments/assets/2eb36210-035b-4d0d-98c1-379250b44011" />
 
-4. Give a name to the dataset, change the location type of region, select the region closest to your location, and then click the `Create dataset` button.
+3. Create a new or use an existing resource group. (Suggest: create a new one so its easy to delete the resources later on.)
+4. Give a unique name for `Service name`.
+5. Make sure the `Pricing tier` is free, unless you want to experience paid service.
+6. Finally, click `Review + Create` button at the bottom and then click `Create` button to create the resource.
 
-<img width="1916" height="936" alt="Screenshot From 2025-09-23 07-13-58" src="https://github.com/user-attachments/assets/0eb9f54d-a233-4412-9ada-777ea074cb7b" />
+<img width="800" alt="Screenshot From 2026-03-07 11-53-43" src="https://github.com/user-attachments/assets/98c24fd8-3266-409e-81f7-129c3bcad103" />
 
-5. Finally, note down the project ID, dataset ID, and region of the dataset. In this case, `main-ember-473011-a4` is the project ID, `vector_database` is the dataset ID, and `us-east1` is the region; similarly, note down the specific data for your case.
+7. Next, do to the resource dashboard and copy the `Url` from the `Essentials`. This `Url` will be used as `AZURE_OPEN_API_ENDPOINT`.
+
+<img width="800" alt="Screenshot From 2026-03-07 11-57-59" src="https://github.com/user-attachments/assets/181f5efc-c51f-4169-8cac-ec9c6d66decf" />
+
+8. To get the `AZURE_OPEN_API_KEY` go to the `Keys` tab under `Settings` section from the left navbar. From this screen, copy the `Primary admin key`.
+
+<img width="800" alt="Screenshot From 2026-03-07 11-59-14" src="https://github.com/user-attachments/assets/3aed742c-cac6-44cd-8287-c122cc47307b" />
+
+## Azure AI Foundry
+
+We are using **Azure AI Foundry** to deploy and use models. To use that, we need to provision the resource and get two values: `AZURE_OPEN_API_KEY` and `AZURE_OPEN_API_ENDPOINT`, which will be used as environment variables. 
+
+1. Go to the [Azure AI Foundry](http://ai.azure.com/)
+2. Click `Create new` button to create a new project.
+3. For the resource type, keep the recommended option and click `Next`.
+
+<img width="800" alt="Screenshot From 2026-03-07 12-21-42" src="https://github.com/user-attachments/assets/5d7e25ed-17f4-4edc-95ea-d70be24616de" />
+
+4. Give it a good name, keep everything else default and click `Create`.
+
+<img width="800" alt="Screenshot From 2026-03-07 12-33-28" src="https://github.com/user-attachments/assets/58b32bb3-8018-4c6c-87d8-c8670b43a927" />
+
+5. Finally, from the project overview page, copy `API Key` to use as `AZURE_OPEN_API_KEY` and `Microsoft Foundry project endpoint` to use as `AZURE_OPEN_API_ENDPOINT`.
+
+<img width="800" alt="Screenshot From 2026-03-07 12-37-15" src="https://github.com/user-attachments/assets/3940633d-b151-486f-94c8-6c7166306917" />
+
+6. Now from the left navbar, click `Models + endpoints` under `My assets` section.
+7. Click `Deploy base model`. Now we will deploy an embedding model and a generation model.
+
+<img width="800" alt="Screenshot From 2026-03-07 12-41-27" src="https://github.com/user-attachments/assets/09317a2b-d7f0-47d7-83a9-67c8634a8fda" />
+
+8. Search for `text-embedding-3-small` and click `Confirm`.
+
+<img width="800" alt="Screenshot From 2026-03-07 12-43-59" src="https://github.com/user-attachments/assets/0f378759-24a6-4c89-9533-8d88bad6fe68" />
+
+9. Change the `Deployment type` to `Standard` and click `Deploy` to deploy the model.
+
+<img width="800" alt="Screenshot From 2026-03-07 12-45-04" src="https://github.com/user-attachments/assets/af6bba7b-7095-40cb-8d02-58ec6653d393" />
 
 ## Code
 
-1. Create a Python virtual environment using the following command
+1. Open [this notebook](./main.ipynb) in Google Colab.
 
-Linux/macOS
+2. Add the following environment variables by clicking on this key button, and grant them notebook access
 
-```bash
-python3 -m venv .venv
-```
+- `AZURE_OPEN_API_ENDPOINT`
+- `AZURE_OPEN_API_KEY`
+- `VECTOR_SEARCH_ENDPOINT`
+- `VECTOR_SEARCH_KEY`
 
-Windows
+<img width="400" alt="Screenshot From 2026-03-07 13-01-29" src="https://github.com/user-attachments/assets/7a0aa861-37bc-406e-accd-73ca673d6938" />
 
-```bash
-py -m venv .venv
-```
-
-2. Activate the virtual environment using the following command
-
-Linux/macOS
-
-```bash
-source .venv/bin/activate
-```
-
-Windows
-
-```bash
-.venv\Scripts\activate.bat
-```
-
-3. Use the following command to install the required libs and deps.
-
-Linux/macOS
-
-```bash
-pip install -r https://raw.githubusercontent.com/busycaesar/Embeddings_And_Cosine_Similarity/refs/heads/Master/TorontoJS/req.txt
-```
-
-Windows
-
-```bash
-py -m pip -r https://raw.githubusercontent.com/busycaesar/Embeddings_And_Cosine_Similarity/refs/heads/Master/TorontoJS/req.txt
-```
-
-4. Create a `.env` file and store the following variables along with their values.
-
-```env
-GEMINI_API_KEYS=
-PROJECT_ID=
-DATASET=
-REGION=
-TABLE=
-```
-
-5. Create a `main.ipynb` file and paste [this code](./main.ipynb).
-
-6. Finally, run the script using the following command.
-
-Linux/macOS
-
-```bash
-python main.py
-```
-
-Windows
-
-```bash
-py main.py
-```
+3. Finally, you can run the commands in the notebook.
 
 ## Clean the Cloud
 
-1. Go to the [Google Cloud](https://console.cloud.google.com) and search `manage resources` and go to the `Manage Resources` page.
+1. On [Azure Portal](portal.azure.com) go to `All Resources` and delete all the resources we created for this lab.
 
-2. Click the checkbox of the project that you created, and click the `Delete` button on the top navigation bar. This will open a modal where you will be prompted to enter a project ID and then click the `Shut down anyway` button to delete the project and its resources.
+<img width="400" alt="Screenshot From 2026-03-07 13-05-17" src="https://github.com/user-attachments/assets/914b5ee6-6083-422d-86d4-b9878a90496e" />
