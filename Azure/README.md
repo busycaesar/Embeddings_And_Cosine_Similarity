@@ -51,9 +51,9 @@ We are using **Azure AI Foundry** to deploy and use models. To use that, we need
 
 <img width="800" alt="Screenshot From 2026-03-07 12-33-28" src="https://github.com/user-attachments/assets/58b32bb3-8018-4c6c-87d8-c8670b43a927" />
 
-5. Finally, from the project overview page, copy `API Key` to use as `AZURE_OPEN_API_KEY` and `Microsoft Foundry project endpoint` to use as `AZURE_OPEN_API_ENDPOINT`.
+5. Finally, from the project overview page, copy `API Key` to use as `AZURE_OPEN_API_KEY` and `Azure OpenAI endpoint` to use as `AZURE_OPEN_API_ENDPOINT`.
 
-<img width="800" alt="Screenshot From 2026-03-07 12-37-15" src="https://github.com/user-attachments/assets/3940633d-b151-486f-94c8-6c7166306917" />
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/5e61638d-8654-4f21-85b5-d527f00213c6" />
 
 6. Now from the left navbar, click `Models + endpoints` under `My assets` section.
 7. Click `Deploy base model`. Now we will deploy an embedding model and a generation model.
@@ -67,6 +67,8 @@ We are using **Azure AI Foundry** to deploy and use models. To use that, we need
 9. Change the `Deployment type` to `Standard` and click `Deploy` to deploy the model.
 
 <img width="800" alt="Screenshot From 2026-03-07 12-45-04" src="https://github.com/user-attachments/assets/af6bba7b-7095-40cb-8d02-58ec6653d393" />
+
+10. Similarly, deploy `gpt-4.1-mini` model.
 
 ## Code
 
