@@ -5,14 +5,14 @@
 1. [Azure Resources](#azure-resources)
    - [Azure AI Search](#azure-ai-search)
    - [Azure AI Foundry](#azure-ai-foundry)
-3. [Code](#code)
-4. Do not forget to [Clean the Cloud](#clean-the-cloud)
+2. [Code](#code)
+3. Do not forget to [Clean the Cloud](#clean-the-cloud)
 
 ## Azure Resources
 
 ### Azure AI Search
 
-In this lab, we are using **Azure AI Search** as a vector database. To use that, we need to provision the resource and get two values: `AZURE_OPEN_API_ENDPOINT` and `AZURE_OPEN_API_KEY`, which will be used as environment variables. 
+In this lab, we are using **Azure AI Search** as a vector database. To use that, we need to provision the resource and get two values: `VECTOR_SEARCH_ENDPOINT` and `VECTOR_SEARCH_KEY`, which will be used as environment variables.
 
 1. Go to the [Azure Portal](portal.azure.com) and open `AI Search`.
 
@@ -29,17 +29,17 @@ In this lab, we are using **Azure AI Search** as a vector database. To use that,
 
 <img width="800" alt="Screenshot From 2026-03-07 11-53-43" src="https://github.com/user-attachments/assets/98c24fd8-3266-409e-81f7-129c3bcad103" />
 
-7. Next, do to the resource dashboard and copy the `Url` from the `Essentials`. This `Url` will be used as `AZURE_OPEN_API_ENDPOINT`.
+7. Next, go to the resource dashboard and copy the `Url` from the `Essentials`. This `Url` will be used as `VECTOR_SEARCH_ENDPOINT`.
 
 <img width="800" alt="Screenshot From 2026-03-07 11-57-59" src="https://github.com/user-attachments/assets/181f5efc-c51f-4169-8cac-ec9c6d66decf" />
 
-8. To get the `AZURE_OPEN_API_KEY` go to the `Keys` tab under `Settings` section from the left navbar. From this screen, copy the `Primary admin key`.
+8. To get the `VECTOR_SEARCH_KEY` go to the `Keys` tab under `Settings` section from the left navbar. From this screen, copy the `Primary admin key`.
 
 <img width="800" alt="Screenshot From 2026-03-07 11-59-14" src="https://github.com/user-attachments/assets/3aed742c-cac6-44cd-8287-c122cc47307b" />
 
 ## Azure AI Foundry
 
-We are using **Azure AI Foundry** to deploy and use models. To use that, we need to provision the resource and get two values: `AZURE_OPEN_API_KEY` and `AZURE_OPEN_API_ENDPOINT`, which will be used as environment variables. 
+We are using **Azure AI Foundry** to deploy and use models. To use that, we need to provision the resource and get two values: `AZURE_OPEN_API_KEY` and `AZURE_OPEN_API_ENDPOINT`, which will be used as environment variables.
 
 1. Go to the [Azure AI Foundry](http://ai.azure.com/)
 2. Click `Create new` button to create a new project.
